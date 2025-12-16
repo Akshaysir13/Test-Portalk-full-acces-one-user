@@ -1,6 +1,14 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import * as api from '../lib/api';
 
+const ADMIN_EMAIL = 'admin@jee.com';
+const ADMIN_PASSWORD = 'admin123';
+
+const initialAccounts: UserAccount[] = [
+  { email: ADMIN_EMAIL, password: ADMIN_PASSWORD, role: 'admin', approved: true },
+  { email: 'test@gmail.com', password: 'test123', role: 'student', approved: true },
+];
+
 interface UserAccount {
   id: number;
   email: string;
